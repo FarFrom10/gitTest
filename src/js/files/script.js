@@ -7,6 +7,22 @@ import { flsModules } from "./modules.js";
 "use strict";
 
 
-const someNumber = 2;
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-console.log(typeof someNumber);
+const personalMovieDB = {
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false,
+};
+
+const answerLastMovie = prompt('Один из последних просмотренных фильмов?', ''),
+	answerMovieRate = +prompt('На сколько оцените его?', ''),
+	answerLastMovieCopy = prompt('Один из последних просмотренных фильмов?', ''),
+	answerMovieRateCopy = +prompt('На сколько оцените его?', '');
+
+personalMovieDB.movies[answerLastMovie] = answerMovieRate;
+personalMovieDB.movies[answerLastMovieCopy] = answerMovieRateCopy;
+
+console.log(personalMovieDB);
